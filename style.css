@@ -1,0 +1,202 @@
+/* 1. IMPORTS */
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+/* font colors*/
+
+
+/* ---------------------------
+ 2.  VARIABLES
+---------------------------- */
+:root {
+  --Green: hsl(75, 94%, 57%);
+  --White: hsl(0, 0%, 100%);
+  --Grey-700: hsl(0, 0%, 20%);
+  --Grey-800: hsl(0, 0%, 12%);
+  --Grey-900: hsl(0, 0%, 8%);
+
+  --ff-primary: "Inter", sans-serif;
+  --fw-regular: 400;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+}
+
+
+/* ---------------------------
+ 3. RESETS
+---------------------------- */
+
+/* Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+
+/*  Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+/* Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/*  Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+/* Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+
+
+/* ---------------------------
+ 3. BASE STYLES
+---------------------------- */
+body {
+  display: flex;
+  font-weight: var(--fw-regular);
+  font-family: var(--ff-primary);
+  background-color: var(--Grey-900);
+  justify-content: center;
+  align-items: center;
+
+  margin: 0;
+
+  flex-direction: column;
+  height: 100vh;
+  color: var(--White);
+  -webkit-font-smoothing: antialiased;
+}
+
+
+
+/* ---------------------------
+ 4. COMPONENTS
+---------------------------- */
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 320px;
+  background-color: var(--Grey-800);
+  line-height: 1.5;
+  padding: 2rem;
+  border-radius: 0.625em;
+  width: 100%;
+}
+
+.profile__avatar {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  margin-bottom: 1.5rem;
+  object-fit: cover;
+}
+
+.profile__name {
+  text-align: center;
+  font-size: 1.5rem;
+  padding: 0.1rem;
+}
+
+.profile__location {
+  text-align: center;
+  font-size: 0.8rem;
+  font-weight: var(--fw-semibold);
+  color: var(--Green);
+}
+
+.profile__bio {
+  font-size: 0.8rem;
+  text-align: center;
+  opacity: 0.8;
+  margin: 1rem 0 0.5rem 0;
+} /*top right bottom left*/
+
+.profile__links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  font-size: 0.8rem;
+  font-weight: var(--fw-semibold);
+  width: 100%;
+}
+
+.profile__links a {
+  margin: 0.5rem 0;
+  border-radius: 10px;
+  background-color: var(--Grey-700);
+  padding: 0.75rem 1rem;
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  color: var(--White);
+  width: 100%;
+
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.profile__links a:hover {
+  background-color: var(--Green);
+  color: var(--Grey-900);
+}
+
+
+
+/* -----------------------------------------
+   5. FOOTER / ATTRIBUTION
+----------------------------------------- */
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 1rem;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+  text-decoration: none;
+}
+
+
+/* -----------------------------------------
+   6. DESKTOP LAYOUT (768px+)
+----------------------------------------- */
+@media (min-width: 768px) {
+  body {
+    display: grid;
+    place-items: center;
+  }
+}
